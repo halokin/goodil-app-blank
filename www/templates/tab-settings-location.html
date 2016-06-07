@@ -1,0 +1,35 @@
+<ion-view view-title="">
+
+  <ion-content>
+
+    <form name="cityForm">
+      <div class="list" >
+
+        <div class="padding">
+          <p>Veuillez sélectionner votre ville : </p>
+        </div>
+
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input ion-autocomplete type="text"
+            placeholder="Recherchez une ville ..." select-items-label="Sélectionnez une ville ..." cancel-label="Annuler"
+            item-value-key="id" item-view-value-key="name"
+            items-method="searchCity(query)" ng-model="city.id"
+            model-to-item-method="findCity(modelValue)"
+            items-clicked-method="selectedCity(callback)"
+          />
+        </label>
+
+        <div class="card flash" ng-class="{'not-visible': !flash}">
+          <div class="padding balanced text-center">
+            {{flash}}
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+
+  </ion-content>
+</ion-view>
+

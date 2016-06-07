@@ -1,0 +1,50 @@
+<ion-view view-title="{{deal.name}}">
+
+<ion-nav-buttons side="secondary">
+  <button class="icon ion-ios-star-outline button button-clear" ng-click="doSomething()">
+  </button>
+  <button class="icon ion-ios-upload-outline button button-clear" ng-click="share()">
+  </button>
+</ion-nav-buttons>
+
+    <ion-slide-box>
+      <ion-slide ng-repeat="deal in deals">
+        <div class="deal-detail">
+          <div class="deal-detail-top">
+            <div class="deal-detail-main">
+              <div class="deal-detail-illustration" style="background: transparent url('http://goodil.ibangf.ovh/{{deal.image}}') no-repeat; background-size: contain; background-position: center;" ng-click="openModal()">
+              </div>
+              <div class="deal-detail-description">
+                <p>{{deal.description}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="deal-detail-bottom">
+
+          <div class="deal-detail-col1">
+            <div class="deal-detail-expiration">
+              Valide jusqu'au {{deal.end_date | date:'d MMMM'}}
+            </div>
+            <div class="deal-detail-term">
+            {{deal.term}}
+            </div>
+
+          </div>
+            <div class="deal-detail-brand-avatar">
+              <div class="half-col">&nbsp;</div>
+              <div class="deal-brand-avatar-container">
+                <img class="deal-brand-avatar" src="http://goodil.ibangf.ovh/{{deal.shop.logo || 'img/missing.png'}}">
+              </div>
+            </div>
+            <div class="deal-detail-location" ng-click="goToMap(deal)">
+              {{deal.shop.name}}
+              <i class="icon ion-ios-location-outline"></i>
+              {{deal.shop.city}}
+              {{deal.shop.address}}
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+</ion-view>

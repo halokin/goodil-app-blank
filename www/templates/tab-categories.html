@@ -1,0 +1,25 @@
+<ion-view view-title="Catégories">
+  <ion-content>
+    <ion-list>
+      <ion-item class="category" ng-repeat="category in categories" type="item" href="#/tab/categories/{{category.id}}/deals">
+        <div class="row">
+          <div class="col col-30 col-center category-col-avatar">
+            <img src="{{category.logo}}">
+          </div>
+          <div class="col col-65">
+            <h2>{{category.name}}</h2>
+
+            <p>
+              {{renderSubCategories(category)}}
+            </p>
+
+          </div>
+          <div class="col col-5 col-center">
+            <i class="icon ion-chevron-right col-center"></i>
+          </div>
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
