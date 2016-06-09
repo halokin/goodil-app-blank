@@ -1,3 +1,9 @@
+html, body, .percentage {
+  width: 100%;
+  height: 100%;
+
+}
+
 .col-5 {
   max-width: 5%;
   -webkit-box-flex: 0;
@@ -228,10 +234,11 @@
 
 .category .item-content, .deal .item-content {
   padding: 16px 5px; }
-.category .category-col-avatar, .deal .category-col-avatar {
+.category .brand-col-avatar, .deal .brand-col-avatar {
   text-align: center; }
-  .category .category-col-avatar img, .deal .category-col-avatar img {
-    max-height: 35px; }
+  .category .brand-col-avatar img, .deal .brand-col-avatar img {
+    max-height: 35px;
+  }
 .category h2, .deal h2 {
   margin-bottom: 5px; }
 .category p, .deal p {
@@ -240,11 +247,14 @@
 .category .ion-chevron-right, .deal .ion-chevron-right {
   color: #C7C7CC; }
 
-.deal .deal-col-category-avatar {
-  text-align: center; }
-  .deal .deal-col-category-avatar img {
-    max-height: 35px; }
 .deal .deal-col-brand-avatar {
+  text-align: center; }
+  .deal .deal-col-brand-avatar img {
+    max-height: 70px; 
+    max-width: 70px; 
+
+  }
+.deal .deal-col-category-avatar {
   text-align: center;
   position: absolute;
   height: 100%;
@@ -259,7 +269,7 @@
   height: 100%;
   border-right: 1px solid #C7C7CC;
   z-index: 0; }
-.deal .brand-avatar-container {
+.deal .category-avatar-container {
   border: 1px solid #C7C7CC;
   position: absolute;
   top: 0;
@@ -267,13 +277,11 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  /*width: 40px;
-  height: 40px;*/
-  width: 60px;
-  height: 60px;
-  border-radius: 60px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
   background: white; }
-  .deal .brand-avatar-container img {
+  .deal .category-avatar-container img {
     top: 0;
     left: 0;
     right: 0;
@@ -457,13 +465,13 @@
     width: 30%;
     text-align: center;
     padding-left: 5%; }
-  .deal-detail .deal-detail-brand-avatar {
+  .deal-detail .deal-detail-category-avatar {
     width: 20%;
     text-align: center;
     position: absolute;
     top: 0;
     bottom: 0; }
-  .deal-detail .brand-avatar-container {
+  .deal-detail .category-avatar-container {
     border: 1px solid #C7C7CC;
     position: absolute;
     top: 0;
@@ -478,7 +486,7 @@
     border-radius: 20px;
     background: white;
     z-index: 1; }
-    .deal-detail .brand-avatar-container img {
+    .deal-detail .category-avatar-container img {
       top: 0;
       left: 0;
       right: 0;
@@ -633,15 +641,17 @@
 
 .shop-logo-thumbnail {
   margin-top: 20px;
-  max-height: 90px;
+  max-height: 150px;
+  max-width: 150px;
+/*  max-height: 90px;
   max-width: 90px;  
   max-height: 100px;
-  max-width: 100px;
+  max-width: 100px;*/
   /*width: 100px;
   height: 100px;*/
 }
 
-.brand-avatar {
+.category-avatar {
   margin-top: 20px;
   max-height: 150px;
   max-width: 150px;
@@ -649,7 +659,7 @@
   height: 150px;*/
 }
 
-/*.brand-avatar-container{
+/*.category-avatar-container{
   width: 150px;
   height: 150px;
 }*/
@@ -658,7 +668,7 @@
 
 /* tab-deal elements */
 
-.deal-brand-avatar-container {
+.deal-category-avatar-container {
     border: 1px solid #C7C7CC;
     position: absolute;
     top: 0;
@@ -674,7 +684,7 @@
     background: white;
     z-index: 1; }
 
-.deal-brand-avatar-container img {
+.deal-category-avatar-container img {
     top: 0;
     left: 0;
     right: 0;
