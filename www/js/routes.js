@@ -59,6 +59,17 @@ function routes ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   })
 
 
+     .state('tab.category', {
+    url: '/categories/:aId',
+    views: {
+      'tab-categories': {
+        templateUrl: 'templates/tab-category.html',
+        controller: 'categoriesCtrl'
+      }
+    }
+  })
+
+
      .state('tab.favorites', {
     url: '/favorites',
     views: {
