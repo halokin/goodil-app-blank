@@ -1,57 +1,64 @@
 <ion-view view-title="{{(category.name) || 'Offres'}}" ng-class="loadingClass" class="percentage">
-<ion-content>
-<ion-refresher on-refresh="onRefresh()">
-</ion-refresher>
-<p ng-hide="deals.length" class="deals-empty">Aucune offre pour le moment :(</p>
-<ion-list class="percentage">
-<ion-item class="deal item-thumbnail-left item-icon-right percentage" ng-class="{'star': deal.star}" ng-repeat="deal in deals" type="item" href="#/tab/deals/{{deal.id}}">
-<div class="row percentage">
-  <!--  <div class="col col-20 col-center deal-col-category-avatar">
+  <ion-content>
+    <ion-refresher on-refresh="onRefresh()"></ion-refresher>
+    <p ng-hide="deals.length" class="deals-empty">Aucune offre pour le moment :(</p>
+    <ion-list class="percentage">
+      <ion-item class="deal item-thumbnail-left item-icon-right percentage" ng-class="{'star': deal.star}" ng-repeat="deal in deals" type="item" href="#/tab/deals/{{deal.id}}">
+        <div class="row percentage">
+          <!--  <div class="col col-20 col-center deal-col-category-avatar">
     <img src="{{deal.shop.logo || 'img/missing.png'}}">
   </div> -->
-  
-  <div class="col col-20 col-center deal-col-brand-avatar">
-    <img class="shop-logo-thumbnail" ng-src="http://goodil.ibangf.ovh/{{deal.shop.logo || 'img/missing.png'}}">
-  </div>
-  <div class="col col-25 col-center deal-col-category-avatar">
-    <div class="half-col">&nbsp;</div>
-    <div class="category-avatar-container">
-      <img class="category-avatar" ng-src="http://goodil.ibangf.ovh/{{deal.subCategory.category.logo}}">
-    </div>
-  </div>
-  <div class="col col-60 col-offset-25 deal-description-col">
-    <h2>{{deal.name}}</h2>
-    <p class="shop-name">{{deal.shop.name}}</p>
-    <div class="deal-details">
-      <!-- <p>
+
+          <div class="col col-30 col-center deal-col-brand-avatar">
+            <img class="shop-logo-thumbnail" ng-src="http://goodil.ibangf.ovh/{{deal.shop.logo || 'img/missing.png'}}">
+          </div>
+          <div class="col col-20 col-center deal-col-category-avatar">
+            <div class="half-col">&nbsp;</div>
+            <div class="category-avatar-container">
+              <img class="category-avatar" ng-src="http://goodil.ibangf.ovh/{{deal.subCategory.category.logo}}">
+            </div>
+          </div>
+          <div class="col col-60 col-offset-25 deal-description-col">
+            <h2>{{deal.name}}</h2>
+            <p class="shop-name">{{deal.shop.name}}</p>
+            <div class="deal-details">
+              <!-- <p>
         <i class="icon"></i>
         <span>{{deal.end_date | date:'d MMMM'}}</span>
       </p> -->
-      <p>
-        <i class="city-deals icon ion-ios-clock-outline"></i>
-        <span>du {{deal.start_date | date:'d MMMM'}}</span>
-      </p>
-      <p>
-        <span class="city-deals-end">au {{deal.end_date | date:'d MMMM'}}</span>
-      </p>
-      <p>
-        <i class="city-deals icon ion-ios-location-outline"></i>
-        <span class="city-deals-line">{{deal.shop.address[1]}}</span>
-        <!-- <span class="city-deals-line">{{deal.shop.city}}</span> -->
-      </p>
-    </div>
-  </div>
-  <div class="col col-5 col-center">
-    <i class="icon ion-chevron-right col-center"></i>
-  </div>
-</div>
-<button class="button button-clear icon ion-star button-royal" ng-click="toggleStar(deal)" ng-show="deal.star"></button>
-<ion-option-button class="button-royal" ng-click="toggleStar(deal)">
-<i class="icon ion-star"></i>
-</ion-option-button>
-</ion-item>
-</ion-list>
-<ion-infinite-scroll on-infinite="loadMore()" immediate-check="false" distance="1%" ng-if="nextPage">
-</ion-infinite-scroll>
-</ion-content>
+              <div class="row">
+
+                <div class="col col-20">
+                  <i class="city-deals icon ion-ios-clock-outline"></i>
+                </div>
+                <div class="col col-70">
+                  <p>du
+                    {{deal.start_date | date:'d MMMM'}}</p>
+                  <p>au
+                    {{deal.end_date | date:'d MMMM'}}</p>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col col-20">
+                  <i class="city-deals icon ion-ios-location-outline"></i>
+                </div>
+                <div class="col col-70">
+                  <span class="city-deals-line">{{deal.shop.address[1]}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-5 col-center">
+            <i class="icon ion-chevron-right col-center"></i>
+          </div>
+        </div>
+        <button class="button button-clear icon ion-star button-royal" ng-click="toggleStar(deal)" ng-show="deal.star"></button>
+        <ion-option-button class="button-royal" ng-click="toggleStar(deal)">
+          <i class="icon ion-star"></i>
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false" distance="1%" ng-if="nextPage"></ion-infinite-scroll>
+  </ion-content>
 </ion-view>

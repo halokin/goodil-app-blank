@@ -237,7 +237,7 @@ html, body, .percentage {
 .category .brand-col-avatar, .deal .brand-col-avatar {
   text-align: center; }
   .category .brand-col-avatar img, .deal .brand-col-avatar img {
-    max-height: 35px;
+    max-height: 100%;
   }
 .category h2, .deal h2 {
   margin-bottom: 5px; }
@@ -250,8 +250,8 @@ html, body, .percentage {
 .deal .deal-col-brand-avatar {
   text-align: center; }
   .deal .deal-col-brand-avatar img {
-    max-height: 70px; 
-    max-width: 70px; 
+    max-height: 100%;
+    max-width: 100%;
 
   }
 .deal .deal-col-category-avatar {
@@ -289,8 +289,8 @@ html, body, .percentage {
     margin: auto;
     position: absolute;
     z-index: 1;
-    max-width: 70%;
-    max-height: 70%; }
+    max-width: 60%;
+    max-height: 60%; }
 .deal .deal-description-col {
   padding-left: 2%; }
 .deal h2 {
@@ -644,7 +644,7 @@ html, body, .percentage {
   max-height: 150px;
   max-width: 150px;
 /*  max-height: 90px;
-  max-width: 90px;  
+  max-width: 90px;
   max-height: 100px;
   max-width: 100px;*/
   /*width: 100px;
