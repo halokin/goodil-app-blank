@@ -1,4 +1,4 @@
-function mapCtrl($scope, $state, $stateParams, $http) {
+function mapCtrl($scope, $state, $stateParams, $http, $cordovaGeolocation) {
   console.log($stateParams.lng)
 
 var mapOptions = {

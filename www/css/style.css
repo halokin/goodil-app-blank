@@ -715,7 +715,9 @@ html, body, .percentage {
   margin-top: 15px; }
 
 
- /*.royal{
-    color : #4F2C86 !important; // text
-    background-color:#4F2C86 !important; // for bg color
- }*/
+.categorylogo {
+  /*margin-top: 20px;*/
+  max-height: 30px;
+  max-width: 30px;
+  margin-left: 10px;
+}

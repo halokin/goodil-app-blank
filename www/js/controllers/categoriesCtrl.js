@@ -2,18 +2,14 @@ function categoriesCtrl ($scope, $state, $stateParams, $http) {
 
 
 	$http.get('http://goodil.ibangf.ovh/deals').then(function(res){
-    console.log('deals');
     console.log(res.data);
-
+    $scope.deals = res.data;
   	})
  	$http.get('http://goodil.ibangf.ovh/category').then(function(res){
-    console.log('categories');
-    console.log(res.data);
     $scope.categories = res.data;
   	})
   	$http.get('http://goodil.ibangf.ovh/shop').then(function(res){
-    console.log('shops');
-    console.log(res.data);
+
   	})
 
 
@@ -32,5 +28,30 @@ function categoriesCtrl ($scope, $state, $stateParams, $http) {
 // 	SubCategory: "Informatique",
 
 // }];
+
+$scope.goToTabCategory = function(category){
+$state.go('tab.category', {aId: category.name})
+}
+
+
+
+$scope.CategoryFilter = $stateParams.aId;
+
+// if ($stateParams.aId){
+//       var count;
+//       for (count = 0; count < $scope.categories.length; count ++){
+//         if ($scope.categories[count].id == $stateParams.aId)
+//           break;
+//       }
+//       setTimeout(function() {
+//                 $ionicSlideBoxDelegate.slide(count);
+//                 $ionicSlideBoxDelegate.update();
+//                 $scope.$apply();
+//          });
+//   }
+
+
+
+
 }
 
